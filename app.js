@@ -1,12 +1,7 @@
 const { inquirerMenu, pausa, leerInput, listadoTareasBorrar, confirmar, mostrarListadoChecklist } = require('./helpers/menuinq');
 const { guardarDB, leerDB } = require('./helpers/savefile');
-// const Tarea = require('./models/tarea');
 const Tareas = require('./models/tareas');
-
 require('colors');
-
-
-
 
 const main = async() => {
     let opt = '';
@@ -54,9 +49,8 @@ const main = async() => {
           }
         break;
       }
-
+      
       guardarDB(tareas.listadoArr);
-
 
       if (opt !== '0') await pausa();
     } while (opt !== '0');
